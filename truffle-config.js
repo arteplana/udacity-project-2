@@ -22,11 +22,12 @@
  *
  */
 
-const HDWallet = require('truffle-hdwallet-provider');
+const HDWalletProvider = require('truffle-hdwallet-provider');
 const infuraKey = "55699a301aac41d69b263ac6f75a9941";
+const mnemonic = "That is secret!";
 //
 const fs = require('fs');
-const mnemonic = fs.readFileSync(".secret").toString().trim();
+// const mnemonic = fs.readFileSync(".secret").toString().trim();
 
 module.exports = {
   /**
@@ -56,11 +57,11 @@ module.exports = {
     rinkeby: {
       provider: () => new HDWalletProvider(mnemonic, `https://goerli.infura.io/v3/${infuraKey}`),
         network_id: 5,       // goerli's id
-        gas: 4500000,        //
+        gas: 4465030,        //
         gasPrice: 10000000000,
-        confirmations: 2,
-        timeoutBlocks: 200,
-        skipDryRun: true,
+        // confirmations: 2,
+        // timeoutBlocks: 200,
+        // skipDryRun: true,
     },
 
     // Another network with more advanced options...
